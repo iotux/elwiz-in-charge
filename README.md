@@ -4,11 +4,11 @@ An intelligent EV charging controller that integrates with the ElWiz ecosystem t
 
 ## Overview
 
-elwiz-in-charge is designed to control EV charging systems (currently supporting Easee chargers) based on MQTT messages from the ElWiz system. It allows for intelligent charging that can take advantage of low electricity prices while respecting user requirements and preferences.
+*elwiz-in-charge* is designed to control EV charging systems (currently supporting Easee chargers) based on MQTT messages from the ElWiz system. It allows for intelligent charging that can take advantage of low electricity prices while respecting user requirements and preferences.
 
 ## Features
 
-- **Smart Charging Control**: Automatically controls EV charging based on power prices from ElWiz
+- **Smart Charging Control**: Automatically controls EV charging based on power prices from the Nord Pool electricity market
 - **MQTT Integration**: Seamlessly integrates with MQTT-based home automation systems
 - **Multiple Charger Support**: Currently supports Easee chargers with architecture ready for other brands
 - **Real-time State Monitoring**: Continuously monitors charger state and publishes data via MQTT
