@@ -1,0 +1,43 @@
+{
+  "name": "elwiz-in-charge",
+  "version": "0.0.1",
+  "description": "Intelligent EV charging controller that integrates with the ElWiz ecosystem to optimize charging based on power prices and user preferences.",
+  "main": "src/charger.js",
+  "scripts": {
+    "start": "node src/charger.js",
+    "dev": "node --watch src/charger.js"
+  },
+  "keywords": [
+    "ev-charging",
+    "easee",
+    "smart-charging",
+    "energy-optimization",
+    "mqtt",
+    "home-automation",
+    "power-management",
+    "electric-vehicle",
+    "iot",
+    "elwiz"
+  ],
+  "author": "iotux",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iotux/elwiz-in-charge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iotux/elwiz-in-charge/issues"
+  },
+  "homepage": "https://github.com/iotux/elwiz-in-charge#readme",
+  "dependencies": {
+    "@iotux/uni-cache": "^0.1.2",
+    "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
+    "easy-tasker": "^0.1.2",
+    "js-yaml": "^4.1.0",
+    "mqtt": "^5.14.1"
+  },
+  "overrides": {
+    "whatwg-url": "^14.0.0"
+  }
+}

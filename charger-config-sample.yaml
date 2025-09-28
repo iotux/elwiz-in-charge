@@ -1,0 +1,68 @@
+---
+# Easee configuration file
+serverConfig:
+  # Reauthentication may be needed for the charger API
+  # For Easee chargers, this intrval (3600) is received from the API itself
+  # Setting it to a smaller value may prevent disconnections caused by network issues
+  authInterval: 1800
+
+  debug: true
+  serverPort: 3003
+
+  # Charger brand
+  chargerBrand: easee
+  # Your charger ID is found in the Easee app
+  # It is required for API calls
+  chargerId:
+  siteId:
+  userId:
+
+  # networkType can be TN, TT or IT. TN is default
+  networkType: IT
+  # phaseCount can be 1, 2 or 3
+  # Default is 3. If unsure, keep the default. The program will adjust
+  phaseCount: 3
+  # minChargingCurrent is the charger's self consumption
+  # Used to prevent false signals from charger. Default is 0.001 Ampere. 
+  # Increase if program is reporting charging when charging is finishsed
+  minChargingCurrent: 0.01
+
+  # MQTT configuration
+  # Quotes around brokerUrl are required
+  brokerUrl: "mqtt://localhost:1883"
+  userName:
+  password:
+  baseTopic: evcharger
+  
+  # debugTopic is appended to "baseTopic/"
+  debugTopic: debug
+
+  # reportTopic is appended to "baseTopic/"
+  reportTopic: report
+
+  # controlTopic runs API calls
+  # It is appended to "baseTopic/"
+  controlTopic: control
+  
+  # Default is to interact with elwiz-chart
+  # green/red zones, which are set according to 
+  # the spot prices being below/above threshold
+  # It can be changed to whatever you see fit
+  belowThresholdTopic: elwiz/chart/spotBelowThreshold
+  
+  # Has priority over belowThresholdTopic and forceOffTopics
+  # It is appended to "baseTopic/"
+  overrideTopic: override
+
+  # An array of topics, each forces charging to pause
+  # foreceOffTopics runs pause() on "1", resume() on "0"
+  forceOffTopics: 
+    #- 083a8d01618c/HP/1A01
+    - some/other/topic
+    - force/off/topic
+
+  # Home Assistant topics
+  haAnnounceTopic: homeassistant
+
+clientConfig:
+  # For future enhancements

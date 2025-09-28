@@ -1,0 +1,34 @@
+# Dependency directories
+node_modules/
+
+# Credentials and sensitive data
+data/
+
+# Live config file
+charger-config.yaml
+
+# Log files
+*.log
+logs/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Process files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.prettierignore
+
