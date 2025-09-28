@@ -1,7 +1,7 @@
 {
   "name": "elwiz-in-charge",
   "version": "0.0.1",
-  "description": "Intelligent EV charging controller that integrates with the ElWiz ecosystem to optimize charging based on power prices and user preferences.",
+  "description": "Intelligent EV charging controller that integrates with ElWiz to optimize charging based on power prices and user preferences.",
   "main": "src/charger.js",
   "scripts": {
     "start": "node src/charger.js",
