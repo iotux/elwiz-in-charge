@@ -1,6 +1,6 @@
 # elwiz-in-charge
 
-An intelligent EV charging controller that integrates with the ElWiz ecosystem to optimize charging based on power prices and user preferences.
+An intelligent EV charging controller that integrates with ElWiz to optimize charging based on power prices and user preferences.
 
 ## Overview
 
@@ -8,7 +8,7 @@ An intelligent EV charging controller that integrates with the ElWiz ecosystem t
 
 ## Features
 
-- **Smart Charging Control**: Automatically controls EV charging based on power prices from the Nord Pool electricity market
+- **Smart Charging Control**: Automatically controls EV charging based on power prices from the Nord Pool electricity market and provided through ElWiz
 - **MQTT Integration**: Seamlessly integrates with MQTT-based home automation systems
 - **Multiple Charger Support**: Currently supports Easee chargers with architecture ready for other brands
 - **Real-time State Monitoring**: Continuously monitors charger state and publishes data via MQTT
@@ -27,7 +27,7 @@ An intelligent EV charging controller that integrates with the ElWiz ecosystem t
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/iotux/elwiz-in-charge.git
 cd elwiz-in-charge
 ```
 
