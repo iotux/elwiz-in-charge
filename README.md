@@ -4,7 +4,7 @@ An intelligent EV charging controller that integrates with the ElWiz ecosystem t
 
 ## Overview
 
-elwiz-in-charge is designed to control EV charging systems (currently supporting Easee chargers) based on signals from the ElWiz system. It allows for intelligent charging that can take advantage of low electricity prices while respecting user requirements and preferences.
+elwiz-in-charge is designed to control EV charging systems (currently supporting Easee chargers) based on MQTT messages from the ElWiz system. It allows for intelligent charging that can take advantage of low electricity prices while respecting user requirements and preferences.
 
 ## Features
 
@@ -12,7 +12,7 @@ elwiz-in-charge is designed to control EV charging systems (currently supporting
 - **MQTT Integration**: Seamlessly integrates with MQTT-based home automation systems
 - **Multiple Charger Support**: Currently supports Easee chargers with architecture ready for other brands
 - **Real-time State Monitoring**: Continuously monitors charger state and publishes data via MQTT
-- **401 Error Handling**: Automatically handles authentication token refresh when API returns 401 errors
+- **401 Error Handling**: Automatically handles authentication token refresh
 - **Manual Override**: Allows manual control via MQTT topics
 
 ## Prerequisites
@@ -20,7 +20,7 @@ elwiz-in-charge is designed to control EV charging systems (currently supporting
 - Node.js (v14 or higher)
 - npm or yarn
 - An EV charger (currently supports Easee)
-- An MQTT broker (optional but recommended for integration with Home Assistant)
+- An MQTT broker
 - ElWiz system running (for power price signals)
 
 ## Installation
@@ -40,12 +40,13 @@ npm install
 
 4. Run the application:
 ```bash
-node index-2025.02.05.js
+src/charger.js
 ```
 
 ## Configuration
 
-All configuration is done through the `charger-config.yaml` file. Here's an example configuration:
+Copy `charger-config-sample.yaml` to `charger-config.yaml` and modify `charger-config.yaml` file according to your preferences.
+Here's an example configuration:
 
 ```yaml
 ---
@@ -73,7 +74,7 @@ serverConfig:
   # Default is 3. If unsure, keep the default. The program will adjust
   phaseCount: 3
   # minChargingCurrent is the charger's self consumption
-  # Used to prevent false signals from charger. Default is 0.001 Ampere. 
+  # Used to prevent false signals from charger. Default is 0.001 Ampere.
   # Increase if program is reporting charging when charging is finished
   minChargingCurrent: 0.01
 
@@ -83,7 +84,7 @@ serverConfig:
   userName:
   password:
   baseTopic: evcharger
-  
+
   # debugTopic is appended to "baseTopic/"
   debugTopic: debug
 
@@ -93,20 +94,20 @@ serverConfig:
   # controlTopic runs API calls
   # It is appended to "baseTopic/"
   controlTopic: control
-  
+
   # Default is to interact with elwiz-chart
-  # green/red zones, which are set according to 
+  # green/red zones, which are set according to
   # the spot prices being below/above threshold
   # It can be changed to whatever you see fit
   belowThresholdTopic: elwiz/chart/spotBelowThreshold
-  
+
   # Has priority over belowThresholdTopic and forceOffTopics
   # It is appended to "baseTopic/"
   overrideTopic: override
 
   # An array of topics, each forces charging to pause
   # forceOffTopics runs pause() on "1", resume() on "0"
-  forceOffTopics: 
+  forceOffTopics:
     - some/other/topic
     - force/off/topic
 
@@ -188,7 +189,7 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## License
 
-[Specify your license here]
+MIT
 
 ## Support
 
